@@ -1,3 +1,11 @@
+<!--
+    File: index.html
+    Name: Henry Pacheco Cachon
+    Class: CS325, January 2022
+    Lab: 07
+    Due: 17 January 2022
+-->
+
 <!DOCTYPE html>
 
 <html lang="EN">
@@ -6,46 +14,56 @@
         <title> Just a Simple Form </title>
         <link rel="stylesheet" href="index.css" type="text/css" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="validate.js"></script>
     </head>
 
     <body class="wrapper">
         
-        <form class="container">
+        <form class="container" id="JASF" method="post">
             <h1 id="form-name"> Just a Simple Form </h1>
 
+            <div id="required">
+                <ul id="formPrompt">
+                    <li> ITEMS MARKED WITH * ARE REQUIRED </li>
+                </ul>
+            </div>
+
             <div id="first-name">
-                First Name: <input type="text"/>
+                First Name: <input type="text" name="first_name" />
             </div>
 
             <div id="last-name">
-                Last Name: <input type="text"/>
+                Last Name: <input type="text" name="last_name" />
             </div>
             
             <div id="address">
-                Address: <input type="text"/>
+                Address: <input type="text" name="address" />
             </div>
 
             <div id="email">
-                Email: <input type="email" />
+                <label id="email_label" > Email: </label>
+                <input type="email" name="email" required/>
             </div>
 
             <div id="password">
-                Password: <input type="password" />
+                <label id="password_label"> Password: </label>
+                <input type="password" name="password" required />
             </div>
 
             <div id="password-prompt">
                 <p> Please have the following items </p>
                 <ul>
-                    <li> One uppercase character </li>
-                    <li> One lowercase character </li>
-                    <li> A special character (!@#$...) </li>
-                    <li> 8 or more characters </li>
+                    <li id="uppercase"> One uppercase character </li>
+                    <li id="lowercase"> One lowercase character </li>
+                    <li id="special"> A special character (!@#$...) </li>
+                    <li id="length"> 8 or more characters </li>
                 </ul>
             </div>
             
             <div id="radio-choice">
-                Student <input type="radio" name="role"> <br>
-                Teacher <input type="radio" name="role">
+                Student <input type="radio" name="role" id="student"> <br>
+                Teacher <input type="radio" name="role" id="teacher">
             </div>
 
             <div id="favorite-food">
@@ -69,7 +87,8 @@
 
             <div id="submit-reset">
                 <input type="submit" value="Submit">
-                <input type="button" value="Reset">
+                <input type="reset">
+                <button onclick="clear_identity()" title="Sneaky for no reason" value="0" id="hide">Make me anonymous</button>
             </div>
 
         </form>
