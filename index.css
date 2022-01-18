@@ -44,6 +44,44 @@ h1#form-name {
     grid-column: 1/4;
 }
 
+input[type=submit] {
+    background-color: limegreen;
+    color: white;
+    border: none;
+
+    transition-duration: 0.4s;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: limegreen;
+}
+
+input[type=reset] {
+    background-color: grey;
+    color: white;
+    border: none;
+
+    transition-duration: 0.4s;
+}
+
+input[type=reset]:hover {
+    background-color: white;
+    color: black;
+}
+
+button#hide{
+    background-color: lightblue;
+    color: white;
+    border: none;
+
+    transition-duration: 0.4s;
+}
+
+button#hide:hover {
+    background-color: white;
+    color: lightblue;
+}
 
 form{
     background-color: darkblue;
